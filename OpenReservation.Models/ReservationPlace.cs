@@ -9,14 +9,14 @@ namespace OpenReservation.Models
     public class ReservationPlace
     {
         /// <summary>
-        /// 活动室id
+        /// 仪器id
         /// </summary>
         [Key]
         [Column]
         public Guid PlaceId { get; set; }
 
         /// <summary>
-        /// 活动室名称
+        /// 仪器名称
         /// </summary>
         [Column]
         [Required]

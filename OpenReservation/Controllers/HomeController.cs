@@ -132,7 +132,7 @@ namespace OpenReservation.Controllers
         /// 根据预约日期和预约地点获取可用的预约时间段
         /// </summary>
         /// <param name="dt">预约日期</param>
-        /// <param name="placeId">预约地点id</param>
+        /// <param name="placeId">预约仪器id</param>
         /// <returns></returns>
         public ActionResult GetAvailablePeriods(DateTime dt, Guid placeId, [FromServices] ReservationHelper reservationHelper)
         {

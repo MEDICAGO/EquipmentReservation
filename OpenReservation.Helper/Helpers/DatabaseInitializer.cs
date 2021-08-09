@@ -72,8 +72,8 @@ namespace OpenReservation.Helpers
             //Places init
             dbContext.ReservationPlaces.AddRange(new[]
                 {
-                    new ReservationPlace { PlaceId = placeId, PlaceName = "第一多功能厅", UpdateBy = "System", PlaceIndex = 0,MaxReservationPeriodNum = 2 },
-                    new ReservationPlace { PlaceId = placeId1, PlaceName = "第二多功能厅", UpdateBy = "System", PlaceIndex = 1,MaxReservationPeriodNum = 2},
+                    new ReservationPlace { PlaceId = placeId, PlaceName = "冷冻离心机", UpdateBy = "System", PlaceIndex = 0,MaxReservationPeriodNum = 2 },
+                    new ReservationPlace { PlaceId = placeId1, PlaceName = "冻干机", UpdateBy = "System", PlaceIndex = 1,MaxReservationPeriodNum = 2},
                 });
 
             dbContext.ReservationPeriods.AddRange(new[]
@@ -168,7 +168,7 @@ namespace OpenReservation.Helpers
                     SettingId = Guid.NewGuid(),
                     SettingName = "SystemKeywords",
                     DisplayName = "系统关键词/Keywords",
-                    SettingValue = "预约,活动室,预定,reservation,booking"
+                    SettingValue = "预约,仪器,预定,reservation,booking"
                 },
                 new SystemSettings
                 {

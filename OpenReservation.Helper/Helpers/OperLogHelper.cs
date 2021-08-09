@@ -74,7 +74,7 @@ namespace OpenReservation.Helpers
         [Description("黑名单")]
         BlockEntity = 1, //黑名单
 
-        [Description("预约活动室")]
+        [Description("预约仪器")]
         ReservationPlace = 2, //预约活动室
 
         [Description("公告")]

@@ -211,7 +211,7 @@
 					"name": "Reservation",
 					"item": [
 						{
-							"name": "活动室预约列表",
+							"name": "仪器预约列表",
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -299,7 +299,7 @@
 					"name": "Reservation Place",
 					"item": [
 						{
-							"name": "预约活动室列表",
+							"name": "预约仪器列表",
 							"request": {
 								"auth": {
 									"type": "noauth"
@@ -377,7 +377,7 @@
 										{
 											"key": "placeId",
 											"value": "{{placeId}}",
-											"description": "活动室id"
+											"description": "仪器id"
 										}
 									]
 								}

@@ -30,7 +30,7 @@ namespace OpenReservation.API
         }
 
         /// <summary>
-        /// 活动室预约列表
+        /// 仪器预约列表
         /// </summary>
         /// <param name="phone">手机号</param>
         /// <param name="pageNumber">pageNumber</param>

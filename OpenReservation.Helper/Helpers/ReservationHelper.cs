@@ -115,7 +115,7 @@ namespace OpenReservation.Helpers
         /// <returns></returns>
         private bool IsReservationForPeriodAvailable(DateTime dt, Guid placeId, string reservationForPeriodIds)
         {
-            // 根据活动室配置最大可预约的时间段数量
+            // 根据仪器配置最大可预约的时间段数量
 
             var periods = GetAvailablePeriodsByDateAndPlace(dt, placeId);
             // 预约时间段逻辑修改

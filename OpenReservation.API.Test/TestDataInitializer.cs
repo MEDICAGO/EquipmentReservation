@@ -33,8 +33,8 @@ namespace OpenReservation.API.Test
                     var placeId1 = Guid.NewGuid();
                     //Places init
                     dbContext.ReservationPlaces.AddRange(new[] {
-                            new ReservationPlace { PlaceId = placeId, PlaceName = "第一多功能厅", UpdateBy = "System", PlaceIndex = 0,MaxReservationPeriodNum = 2 },
-                            new ReservationPlace { PlaceId = placeId1, PlaceName = "第二多功能厅", UpdateBy = "System", PlaceIndex = 1,MaxReservationPeriodNum = 2}}
+                            new ReservationPlace { PlaceId = placeId, PlaceName = "冷冻离心机", UpdateBy = "System", PlaceIndex = 0,MaxReservationPeriodNum = 2 },
+                            new ReservationPlace { PlaceId = placeId1, PlaceName = "冻干机", UpdateBy = "System", PlaceIndex = 1,MaxReservationPeriodNum = 2}}
                      );
 
                     dbContext.ReservationPeriods.AddRange(new[]
@@ -110,21 +110,21 @@ namespace OpenReservation.API.Test
                                 SettingId = Guid.NewGuid(),
                                 SettingName = "SystemTitle",
                                 DisplayName = "系统标题",
-                                SettingValue = "活动室预约系统"
+                                SettingValue = "仪器预约系统"
                             },
                             new SystemSettings
                             {
                                 SettingId = Guid.NewGuid(),
                                 SettingName = "SystemKeywords",
                                 DisplayName = "系统关键词",
-                                SettingValue = "预约,活动室,预定,reservation"
+                                SettingValue = "预约,仪器,预定,reservation"
                             },
                             new SystemSettings
                             {
                                 SettingId = Guid.NewGuid(),
                                 SettingName = "SystemDescription",
                                 DisplayName = "系统简介",
-                                SettingValue = "活动室预约系统是一个基于ASP.NET MVC 开发的一个在线预约系统。"
+                                SettingValue = "仪器预约系统是一个基于ASP.NET MVC 开发的一个在线预约系统。"
                             },
                             new SystemSettings
                             {

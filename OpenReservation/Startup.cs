@@ -319,7 +319,7 @@ namespace OpenReservation
 
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc(ApplicationHelper.ApplicationName, new OpenApiInfo { Title = "活动室预约系统 API", Version = "1.0" });
+                options.SwaggerDoc(ApplicationHelper.ApplicationName, new OpenApiInfo { Title = "仪器预约系统 API", Version = "1.0" });
 
                 options.IncludeXmlComments(System.IO.Path.Combine(AppContext.BaseDirectory, $"{typeof(Notice).Assembly.GetName().Name}.xml"));
                 options.IncludeXmlComments(System.IO.Path.Combine(AppContext.BaseDirectory, $"{typeof(API.NoticeController).Assembly.GetName().Name}.xml"), true);
@@ -389,8 +389,8 @@ namespace OpenReservation
                 .UseSwaggerUI(c =>
                 {
                     // c.RoutePrefix = string.Empty; //
-                    c.SwaggerEndpoint($"/swagger/{ApplicationHelper.ApplicationName}/swagger.json", "活动室预约系统 API");
-                    c.DocumentTitle = "活动室预约系统 API";
+                    c.SwaggerEndpoint($"/swagger/{ApplicationHelper.ApplicationName}/swagger.json", "仪器预约系统 API");
+                    c.DocumentTitle = "仪器预约系统 API";
                 });
 
             app.UseRouting();
@@ -521,15 +521,15 @@ namespace OpenReservation
 
             settings
                 .HasAuthor("WeihanLi")
-                .HasTitle("活动室预约信息")
-                .HasDescription("活动室预约信息")
-                .HasSheetConfiguration(0, "活动室预约信息", true)
+                .HasTitle("仪器预约信息")
+                .HasDescription("仪器预约信息")
+                .HasSheetConfiguration(0, "仪器预约信息", true)
                 ;
 
             settings.Property(r => r.ReservationId).Ignored();
 
             settings.Property(r => r.ReservationPlaceName)
-                .HasColumnTitle("活动室名称")
+                .HasColumnTitle("仪器名称")
                 .HasColumnIndex(0);
             settings.Property(r => r.ReservationForDate)
                 .HasColumnTitle("预约使用日期")
@@ -541,7 +541,7 @@ namespace OpenReservation
                 .HasColumnTitle("预约单位")
                 .HasColumnIndex(3);
             settings.Property(r => r.ReservationActivityContent)
-                .HasColumnTitle("预约活动内容")
+                .HasColumnTitle("实验内容")
                 .HasColumnIndex(4);
             settings.Property(r => r.ReservationPersonName)
                 .HasColumnTitle("预约人姓名")

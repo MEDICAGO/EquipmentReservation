@@ -157,8 +157,8 @@ namespace OpenReservation.AdminLogic.Controllers
             var excelBytes = reservations.ToExcelBytes(ExcelFormat.Xls);
 
             var fileName = (beginDate.HasValue && endDate.HasValue)
-                ? $"{beginDate:yyyyMMdd}-{endDate:yyyyMMdd}活动室预约信息.xls"
-                : "活动室预约信息.xls";
+                ? $"{beginDate:yyyyMMdd}-{endDate:yyyyMMdd}仪器预约信息.xls"
+                : "仪器预约信息.xls";
 
             return File(excelBytes, "application/vnd.ms-excel", fileName);
         }

@@ -51,7 +51,7 @@ namespace OpenReservation.Models
         public string ReservationUnit { get; set; }
 
         /// <summary>
-        /// 预约内容，活动内容
+        /// 预约内容，实验内容
         /// </summary>
         [Column]
         public string ReservationActivityContent { get; set; }
@@ -105,7 +105,7 @@ namespace OpenReservation.Models
         public string ReservationFromIp { get; set; }
 
         /// <summary>
-        /// 预约活动室id
+        /// 预约仪器id
         /// </summary>
         [Column]
         public Guid ReservationPlaceId { get; set; }
@@ -117,7 +117,7 @@ namespace OpenReservation.Models
         public string UpdateMemo { get; set; }
 
         /// <summary>
-        /// 预约活动室信息
+        /// 预约仪器信息
         /// </summary>
         [ForeignKey("ReservationPlaceId")]
         public virtual ReservationPlace Place { get; set; }

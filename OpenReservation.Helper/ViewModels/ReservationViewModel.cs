@@ -23,7 +23,7 @@ namespace OpenReservation.ViewModels
 
         public string ReservationPlaceName { get; set; }
 
-        [Display(Name = "预约活动内容")]
+        [Display(Name = "实验内容")]
         public string ReservationActivityContent { get; set; }
 
         public Guid ReservationId { get; set; }
@@ -48,11 +48,11 @@ namespace OpenReservation.ViewModels
         public string ReservationForTimeIds { get; set; }
 
         [Required]
-        [Display(Name = "预约活动室名称")]
+        [Display(Name = "预约仪器名称")]
         public string ReservationPlaceName { get; set; }
 
         [Required]
-        [Display(Name = "预约活动室id")]
+        [Display(Name = "预约仪器id")]
         public Guid ReservationPlaceId { get; set; }
 
         [Required]
@@ -60,7 +60,7 @@ namespace OpenReservation.ViewModels
         public string ReservationUnit { get; set; }
 
         [Required]
-        [Display(Name = "预约活动内容")]
+        [Display(Name = "实验内容")]
         public string ReservationActivityContent { get; set; }
 
         [Required]

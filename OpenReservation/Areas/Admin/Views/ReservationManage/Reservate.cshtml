@@ -38,9 +38,9 @@
     <div class="container" ng-controller="ReservateCtrl">
         <form id="form1" name="form1">
 
-            @* 选择预约活动室 *@
+            @* 选择预约仪器 *@
             <section id="secActivityRoom" ng-class="{'show':step==0}">
-                <p class="lead">选择预约活动室</p>
+                <p class="lead">选择预约仪器</p>
                 <div id="placesList">
                     @if (Model.Count > 0)
                     {
@@ -76,8 +76,8 @@
                         <input type="text" class="form-control" value="" ng-minlength="3" ng-maxlength="30" id="txtUnit" placeholder="预约单位" required="required" />
                     </div>
                     <div class="form-group">
-                        <label for="txtActivity">预约活动内容</label>
-                        <input type="text" class="form-control" value="" id="txtActivity" placeholder="活动内容" required="required" />
+                        <label for="txtActivity">实验内容</label>
+                        <input type="text" class="form-control" value="" id="txtActivity" placeholder="实验内容" required="required" />
                     </div>
                     <div class="form-group">
                         <label for="txtUsername">预约人姓名</label>
@@ -98,7 +98,7 @@
                         <td>{{ reservationModel.ReservationForDate }}</td>
                     </tr>
                     <tr>
-                        <td>预约地点</td>
+                        <td>仪器名称</td>
                         <td>{{ reservationModel.ReservationPlaceName }}</td>
                     </tr>
                     <tr>
@@ -110,7 +110,7 @@
                         <td>{{ reservationModel.ReservationUnit }}</td>
                     </tr>
                     <tr>
-                        <td>预约活动内容</td>
+                        <td>实验内容</td>
                         <td>{{ reservationModel.ReservationActivityContent }}</td>
                     </tr>
                     <tr>
