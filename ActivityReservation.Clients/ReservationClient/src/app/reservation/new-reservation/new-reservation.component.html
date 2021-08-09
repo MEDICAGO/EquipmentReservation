@@ -2,7 +2,7 @@
     <mat-vertical-stepper linear #stepper (selectionChange)="onStepChange($event)">
         <mat-step [stepControl]="placeFormGroup">
             <form [formGroup]="placeFormGroup">
-                <ng-template matStepLabel>选择要预约的活动室</ng-template>
+                <ng-template matStepLabel>选择要预约的仪器</ng-template>
                 <mat-form-field>
                   <mat-select formControlName="placeCtrl" (selectionChange)="stepper.next()">
                     <mat-option *ngFor="let place of reservationPlaces" [value]="place.PlaceId">

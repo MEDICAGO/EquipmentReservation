@@ -28,7 +28,7 @@ namespace ActivityReservation.API
         }
 
         /// <summary>
-        /// 活动室预约列表
+        /// 仪器预约列表
         /// </summary>
         /// <param name="phone">手机号</param>
         /// <param name="pageNumber">pageNumber</param>
@@ -156,7 +156,7 @@ namespace ActivityReservation.API
             }
             catch (Exception ex)
             {
-                Logger.Error(ex, $"活动室预约失败：{ex.Message}");
+                Logger.Error(ex, $"仪器预约失败：{ex.Message}");
                 result.Status = ResultStatus.ProcessFail;
                 result.ErrorMsg = ex.Message;
                 return Ok(result);

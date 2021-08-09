@@ -13,18 +13,18 @@ using WeihanLi.Extensions;
 namespace ActivityReservation.AdminLogic.Controllers
 {
     /// <summary>
-    /// 预约活动室管理
+    /// 预约仪器管理
     /// </summary>
     public class ReservationPlaceController : AdminBaseController
     {
         /// <summary>
-        /// 活动室管理首页
+        /// 仪器管理首页
         /// </summary>
         /// <returns></returns>
         public ActionResult Index() => View();
 
         /// <summary>
-        /// 活动室列表页面
+        /// 仪器列表页面
         /// </summary>
         /// <returns></returns>
         public ActionResult List(string placeName, int pageIndex, int pageSize)
@@ -49,26 +49,26 @@ namespace ActivityReservation.AdminLogic.Controllers
         }
 
         /// <summary>
-        /// 更新活动室名称
+        /// 更新仪器名称
         /// </summary>
-        /// <param name="placeId">活动室id</param>
-        /// <param name="newName">修改后的活动室名称</param>
-        /// <param name="beforeName">修改之前的活动室名称</param>
+        /// <param name="placeId">仪器id</param>
+        /// <param name="newName">修改后的仪器名称</param>
+        /// <param name="beforeName">修改之前的仪器名称</param>
         /// <returns></returns>
         public ActionResult UpdatePlaceName(Guid placeId, string newName, string beforeName)
         {
             if (string.IsNullOrEmpty(newName))
             {
-                return Json("活动室名称不能为空");
+                return Json("仪器名称不能为空");
             }
             if (!_reservationPlaceHelper.Exist(p => p.PlaceId == placeId))
             {
-                return Json("活动室不存在");
+                return Json("仪器不存在");
             }
             if (_reservationPlaceHelper.Exist(p =>
                 p.PlaceName.ToUpperInvariant().Equals(newName.ToUpperInvariant()) && p.IsDel == false))
             {
-                return Json("活动室名称已存在");
+                return Json("仪器名称已存在");
             }
             try
             {
@@ -80,14 +80,14 @@ namespace ActivityReservation.AdminLogic.Controllers
                         UpdateBy = UserName,
                         UpdateTime = DateTime.UtcNow
                     }, x => x.PlaceName, x => x.UpdateBy, x => x.UpdateTime);
-                OperLogHelper.AddOperLog($"更新活动室 {placeId.ToString()} 名称，从 {beforeName} 修改为{newName}",
+                OperLogHelper.AddOperLog($"更新仪器 {placeId.ToString()} 名称，从 {beforeName} 修改为{newName}",
                     OperLogModule.ReservationPlace, UserName);
                 return Json("");
             }
             catch (Exception ex)
             {
                 Logger.Error(ex);
-                return Json("更新活动室名称失败，发生异常：" + ex.Message);
+                return Json("更新仪器名称失败，发生异常：" + ex.Message);
             }
         }
 
@@ -143,54 +143,54 @@ namespace ActivityReservation.AdminLogic.Controllers
         }
 
         /// <summary>
-        /// 删除活动室
+        /// 删除仪器
         /// </summary>
-        /// <param name="placeId"> 活动室id </param>
-        /// <param name="placeName"> 活动室名称 </param>
+        /// <param name="placeId"> 仪器id </param>
+        /// <param name="placeName"> 仪器名称 </param>
         /// <returns></returns>
         public JsonResult DeletePlace(Guid placeId, string placeName)
         {
             if (string.IsNullOrEmpty(placeName))
             {
-                return Json("活动室名称不能为空");
+                return Json("仪器名称不能为空");
             }
             if (!_reservationPlaceHelper.Exist(p => p.PlaceId == placeId))
             {
-                return Json("活动室不存在");
+                return Json("仪器不存在");
             }
             try
             {
                 _reservationPlaceHelper.Update(
                     new ReservationPlace() { PlaceId = placeId, IsDel = true, UpdateBy = UserName }, x => x.IsDel, x => x.UpdateBy,
                     x => x.UpdateTime);
-                OperLogHelper.AddOperLog($"删除活动室{placeId.ToString()}:{placeName}", OperLogModule.ReservationPlace,
+                OperLogHelper.AddOperLog($"删除仪器{placeId.ToString()}:{placeName}", OperLogModule.ReservationPlace,
                     UserName);
                 return Json("");
             }
             catch (Exception ex)
             {
                 Logger.Error(ex);
-                return Json("删除活动室失败，发生异常：" + ex.Message);
+                return Json("删除仪器失败，发生异常：" + ex.Message);
             }
             ;
         }
 
         /// <summary>
-        /// 删除活动室
+        /// 删除仪器
         /// </summary>
-        /// <param name="placeId"> 活动室id </param>
-        /// <param name="placeName"> 活动室名称 </param>
-        /// <param name="status">活动室状态，大于0启用，否则禁用</param>
+        /// <param name="placeId"> 仪器id </param>
+        /// <param name="placeName"> 仪器名称 </param>
+        /// <param name="status">仪器状态，大于0启用，否则禁用</param>
         /// <returns></returns>
         public JsonResult UpdatePlaceStatus(Guid placeId, string placeName, int status)
         {
             if (string.IsNullOrEmpty(placeName))
             {
-                return Json("活动室名称不能为空");
+                return Json("仪器名称不能为空");
             }
             if (!_reservationPlaceHelper.Exist(p => p.PlaceId == placeId))
             {
-                return Json("活动室不存在");
+                return Json("仪器不存在");
             }
             try
             {
@@ -207,14 +207,14 @@ namespace ActivityReservation.AdminLogic.Controllers
                     x => x.UpdateTime
                     );
                 OperLogHelper.AddOperLog(
-                    $"修改活动室{placeId.ToString()}:{placeName}状态，{((status > 0) ? "启用" : "禁用")}",
+                    $"修改仪器{placeId.ToString()}:{placeName}状态，{((status > 0) ? "启用" : "禁用")}",
                     OperLogModule.ReservationPlace, UserName);
                 return Json("");
             }
             catch (Exception ex)
             {
                 Logger.Error(ex);
-                return Json("修改活动室状态失败，发生异常：" + ex.Message);
+                return Json("修改仪器状态失败，发生异常：" + ex.Message);
             }
             ;
         }
@@ -230,7 +230,7 @@ namespace ActivityReservation.AdminLogic.Controllers
         {
             if (model.PlaceId == Guid.Empty)
             {
-                return Json("预约活动室不能为空");
+                return Json("预约仪器不能为空");
             }
 
             if (model.PeriodTitle.IsNullOrWhiteSpace())
@@ -240,7 +240,7 @@ namespace ActivityReservation.AdminLogic.Controllers
 
             if (!_reservationPlaceHelper.Exist(p => p.PlaceId == model.PlaceId))
             {
-                return Json("活动室不存在");
+                return Json("仪器不存在");
             }
 
             if (_reservationPeriodHelper.Exist(p => p.PeriodIndex == model.PeriodIndex && p.PlaceId == model.PlaceId && p.PeriodId != model.PeriodId))

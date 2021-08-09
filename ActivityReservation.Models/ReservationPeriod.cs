@@ -33,7 +33,7 @@ namespace ActivityReservation.Models
         public int PeriodIndex { get; set; }
 
         /// <summary>
-        /// 活动室id
+        /// 仪器id
         /// </summary>
         [Column]
         public Guid PlaceId { get; set; }

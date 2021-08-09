@@ -25,7 +25,7 @@ namespace ActivityReservation.Models
         private string reservationPersonPhone;
 
         /// <summary>
-        /// 预约活动室id
+        /// 预约仪器id
         /// </summary>
         private Guid reservationPlaceId;
 
@@ -225,7 +225,7 @@ namespace ActivityReservation.Models
         }
 
         /// <summary>
-        /// 预约活动室id
+        /// 预约仪器id
         /// </summary>
         [Column]
         public Guid ReservationPlaceId
@@ -247,7 +247,7 @@ namespace ActivityReservation.Models
         }
 
         /// <summary>
-        /// 预约活动室信息
+        /// 预约仪器信息
         /// </summary>
         [ForeignKey("ReservationPlaceId")]
         public virtual ReservationPlace Place { get; set; }

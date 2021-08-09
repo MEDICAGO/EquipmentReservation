@@ -14,7 +14,7 @@ export class AppComponent {
     this.router.events.subscribe((e) => { if(e instanceof NavigationStart) {this.loadingSvc.isLoading = true;} });
   }
 
-  title = '活动室预约系统';  
+  title = '仪器预约系统';  
 
   menus: Array<MenuItem> = [
     { Title: "首页", Link: "/" },

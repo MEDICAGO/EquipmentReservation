@@ -22,7 +22,7 @@ namespace ActivityReservation.API
         }
 
         /// <summary>
-        /// 预约活动室列表
+        /// 预约仪器列表
         /// </summary>
         /// <param name="cancellationToken"></param>
         /// <returns></returns>
@@ -44,7 +44,7 @@ namespace ActivityReservation.API
         /// <summary>
         /// 获取可预约的时间段
         /// </summary>
-        /// <param name="placeId">活动室id</param>
+        /// <param name="placeId">仪器id</param>
         /// <param name="dt"></param>
         /// <returns></returns>
         [HttpGet("{placeId}/periods")]

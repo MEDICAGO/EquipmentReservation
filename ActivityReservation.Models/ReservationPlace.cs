@@ -11,12 +11,12 @@ namespace ActivityReservation.Models
         #region Private Field
 
         /// <summary>
-        /// 活动室id
+        /// 仪器id
         /// </summary>
         private Guid placeId;
 
         /// <summary>
-        /// 活动室名称
+        /// 仪器名称
         /// </summary>
         private string placeName;
 
@@ -43,7 +43,7 @@ namespace ActivityReservation.Models
         #endregion Private Field
 
         /// <summary>
-        /// 活动室id
+        /// 仪器id
         /// </summary>
         [Key]
         [Column]
@@ -55,7 +55,7 @@ namespace ActivityReservation.Models
         }
 
         /// <summary>
-        /// 活动室名称
+        /// 仪器名称
         /// </summary>
         [Column]
         public string PlaceName

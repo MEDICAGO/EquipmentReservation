@@ -39,9 +39,9 @@
         </header>*@
     <div class="container" ng-controller="ReservateCtrl">
         <form id="form1" name="form1">
-            @* 选择预约活动室 *@
+            @* 选择预约仪器 *@
             <section id="secActivityRoom" ng-class="{'show':step==0}">
-                <p class="lead">选择预约活动室</p>
+                <p class="lead">选择预约仪器</p>
                 <div id="placesList">
                     @if (Model.Count > 0)
                     {
@@ -306,8 +306,8 @@
                                 $scope.reservationModel.ReservationPlaceName =
                                     $("input[name='place']:radio:checked").parent().text().trim();
                             } else {
-                                layer.msg('请选择要预约的活动室');
-                                console.log('请选择要预约的活动室');
+                                layer.msg('请选择要预约的仪器');
+                                console.log('请选择要预约的仪器');
                                 return;
                             }
                             break;

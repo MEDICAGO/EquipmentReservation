@@ -109,7 +109,7 @@ namespace ActivityReservation
             {
                 options.SwaggerDoc(ApplicationHelper.ApplicationName, new Microsoft.OpenApi.Models.OpenApiInfo()
                 {
-                    Title = "活动室预约系统 API",
+                    Title = "仪器预约系统 API",
                     Version = "1.0"
                 });
 
@@ -142,8 +142,8 @@ namespace ActivityReservation
                 .UseSwaggerUI(c =>
                 {
                     // c.RoutePrefix = string.Empty; //
-                    c.SwaggerEndpoint($"/swagger/{ApplicationHelper.ApplicationName}/swagger.json", "活动室预约系统 API");
-                    c.DocumentTitle = "活动室预约系统 API";
+                    c.SwaggerEndpoint($"/swagger/{ApplicationHelper.ApplicationName}/swagger.json", "仪器预约系统 API");
+                    c.DocumentTitle = "仪器预约系统 API";
                 });
 
             app.UseRequestLog();
