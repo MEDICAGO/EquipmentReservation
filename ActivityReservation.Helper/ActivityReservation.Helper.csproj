@@ -2,7 +2,7 @@
   <PropertyGroup>
     <AssemblyName>ActivityReservation.Helper</AssemblyName>
     <RootNamespace>ActivityReservation</RootNamespace>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
     <FrameworkReference Include="Microsoft.AspNetCore.App" />
